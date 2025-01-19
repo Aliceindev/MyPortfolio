@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alice</title>
+
+    <!--/-----------------------/
+        /                       /
+        /       Links CSS       /
+        /                       /
+        /-----------------------/-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script defer src="assets/js/script.js"></script>
+</head>
+
+<body>
+    <!--/-----------------------/
+        /                       /
+        /         Menu          /
+        /                       /
+        /-----------------------/-->
+    <header class="header">
+        <div class="navContainer">
+            <nav class="nav">
+                <a href="#" class="logo"><img src="assets/img/logoPortfolio.png" class="logoImg"></a>
+                <button class="hamburger" id="menuIcon"></button>
+                <ul class="nav-list" id="navLinks">
+                    <li><a href="#" class="menu-link active" onclick="changeContent('section1')">Home</a></li>
+                    <li><a href="#" class="menu-link" onclick="changeContent('section2')">Sobre Mim</a></li>
+                    <li><a href="#" class="menu-link" onclick="changeContent('section3')">Portfólio</a></li>
+                    <li><a href="#" class="menu-link" onclick="changeContent('section4')">Skills</a></li>
+                    <li><a href="#" class="menu-link" onclick="changeContent('section5')">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="containerMidia hidden">
+        <a href="https://github.com/Aliceindev" class="midiaLink">
+            <img src="assets/img/vector.png" class="barraImg">
+            <img src="assets/img/github.png" class="midiaImg">
+        </a>
+        <a href="https://www.linkedin.com/in/alice-santos-588a62243/" class="midiaLink">
+            <img src="assets/img/vector.png" class="barraImg">
+            <img src="assets/img/linkedin.png" class="midiaImg">
+        </a>
+        <a href="#" class="midiaLink">
+            <img src="assets/img/vector.png" class="barraImg">
+            <img src="assets/img/instagram.png" class="midiaImg">
+        </a>
+        <a href="#" class="midiaLink">
+            <img src="assets/img/vector.png" class="barraImg">
+            <img src="assets/img/e-mail.png" class="midiaImg">
+        </a>
+    </div>
+
+    <!--/-----------------------/
+        /                       /
+        /         Home          /
+        /                       /
+        /-----------------------/-->
+
+    <section class="homeContainer hiddenUp content section" id="section1">
+        <div class="contTittle">
+            <h1 class="textTittle typing-animation">Olá!! Meu nome é <span>Alice</span>.</h1>
+            <h1 class="textTittle typing-animation2">Seja bem vindo(a) ao meu Portfólio.</h1>
+            <a href="#" class="btnLink menu-link" onclick="changeContent('section2')">
+                <button class="button">
+                    <span class="button-content">Próximo</span>
+                </button>
+            </a>
+        </div>
+
+        <div class="contAvatar">
+            <img src="assets/img/myAvatar.png" class="avataImg">
+        </div>
+    </section>
+
+    <!--/-----------------------/
+        /                       /
+        /       Sobre Mim       /
+        /                       /
+        /-----------------------/-->
+
+    <section class="aboutContainer content section" id="section2">
+        <div class="aboutContent hiddenRight">
+            <img src="assets/img/pictureMe.png" alt="" class="fotoImg">
+        </div>
+        <div class="aboutContent2 hiddenRight">
+            <h1 class="aboutTittle">Alice Santos</h1>
+            <p class="aboutText">👋 Olá, sou Alice dos Santos Batista, tenho 19 anos e moro em São Paulo, SP. Sou formada em Desenvolvimento de Sistemas e estudo Ciência da Computação.</p>
+            <p class="aboutText">💻 Tenho experiência em programação, análise de dados e desenvolvimento full-stack, com um portfólio repleto de projetos que destacam minhas habilidades técnicas e criatividade.
+            </p>
+            <p class="aboutText">✨📊Atualmente, estou me aprofundando em análise de dados por meio de cursos e projetos práticos, buscando unir esse conhecimento à minha experiência em desenvolvimento para criar soluções inovadoras e eficientes</p>
+        </div>
+    </section>
+
+    <!--/-----------------------/
+        /                       /
+        /      Portfolio        /
+        /                       /
+        /-----------------------/-->
+
+    <section class="portContainer content section" id="section3">
+        <div class="cardContainer swiper">
+            <div class="card-wrapper">
+                <ul class="card-list swiper-wrapper">
+                    <li class="card-item swiper-slide">
+                        <a href="https://github.com/Aliceindev/CarWash" class="card-link">
+                            <h2 class="card-title">CarWash</h2>
+                            <h2 class="card-subtitle">Sistema de gerenciamento e listagem de dados operacionais</h2>
+                            <p class="badge java">Java | SQL</p>
+                            <img src="assets/img/projectCarWash.png" alt="Card Image" class="card-image">
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="https://github.com/Aliceindev/ArtIntHome-Page" class="card-link">
+                            <h2 class="card-title">Art Int. Home </h2>
+                            <h2 class="card-subtitle">Landing Page informacional e disponibilização de serviços</h2>
+                            <p class="badge html">HTML | CSS</p>
+                            <img src="assets/img/projectArtHome.png" alt="Card Image" class="card-image">
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="https://github.com/Aliceindev/Neoxtv" class="card-link">
+                            <h2 class="card-title">Neoxtv</h2>
+                            <h2 class="card-subtitle">Plataforma web de filmes e séries com um sistema CRUD</h2>
+                            <p class="badge csharp">HTML | MySQL</p>
+                            <img src="assets/img/projectNeoxtv.png" alt="Card Image" class="card-image">
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="https://github.com/Aliceindev/CalculadoraIMC" class="card-link">
+                            <h2 class="card-title">Calculadora IMC</h2>
+                            <h2 class="card-subtitle">Calculo de Indice de Massa Corporal em Javascript </h2>
+                            <p class="badge">JavaScript | HTML</p>
+                            <img src="assets/img/projectIMC.png" alt="Card Image" class="card-image">
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="https://github.com/Aliceindev/App-Estoque-Power" class="card-link">
+                            <h2 class="card-title">App Estoque Power</h2>
+                            <h2 class="card-subtitle">Aplicativo administrativo de estoque e varejo</h2>
+                            <p class="badge">Power Apps | Sharepoint</p>
+                            <img src="assets/img/projetcEstoque.png" alt="Card Image" class="card-image">
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="https://github.com/Aliceindev/App-Agenda-Power" class="card-link">
+                            <h2 class="card-title">App Agenda Power</h2>
+                            <h2 class="card-subtitle">Aplicativo de agenda e gerenciamento de contatos</h2>
+                            <p class="badge">Power Apps | Sharepoint</p>
+                            <img src="assets/img/projectAgenda.png" alt="Card Image" class="card-image">
+                        </a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!--/-----------------------/
+        /                       /
+        /        Skills         /
+        /                       /
+        /-----------------------/-->
+
+    <section class="skillsContainer content section" id="section4">
+        <div class="skillsContent">
+            <h1 class="skillTittle">Tecnologias e Habilidades</h1>
+            <div class="skillsImage">
+                <h2 class="skillSubTittle">Techs que uso no dia a dia</h2>
+                <div class="skillTechs">
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Python.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/java.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Csharp.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/HTML5.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/CSS3.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Javascript.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Nodejs.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Figma.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Github2.png" alt="" class="img-tech">
+                    </div>
+                </div>
+            </div>
+            <div class="skillsImage2">
+                <h2 class="skillSubTittle">Outras techs que possuo conhecimentos</h2>
+                <div class="skillTechs">
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/React.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Php.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/TypeScript.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Tailwind.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Union.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Laragon.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Shape.png" alt="" class="img-tech">
+                    </div>
+                    <div class="imgsSkils hiddenRight">
+                        <img src="assets/img/Kotlin.png" alt="" class="img-tech">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--/-----------------------/
+        /                       /
+        /        Contato        /
+        /                       /
+        /-----------------------/-->
+
+        <section class="cttContainer content section" id="section5">
+            <div class="contatoContainer">
+                <h2> Mande uma Mensagem!</h2>
+            <form class="inputContainer" action="https://formsubmit.co/alicesantoss0805@gmail.com" method="POST">
+                <div class="inputGroup">
+                    <input type="text" id="email" name="email" class="inputBaseText" required>
+                    <label for="email">Email:</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="text" id="assunto" name="assunto" class="inputBaseText" required>
+                    <label for="text">Assunto:</label>
+                </div>
+                <div class="inputGroup">
+                    <textarea id="descricao" name="descricao" required style="height: 100px; resize: none;"
+                        class="inputBaseText"></textarea>
+                    <label for="descricao">Descrição:</label>
+                </div>
+                <div class="divBtnBase">
+                    <a href="#"><button class="btnContratar" type="submit">Enviar</button></a>
+                    <a href="#"><button class="btnContratar" type="reset"> Limpar</button></a>
+                </div>
+                <input type="hidden" name="_subject" value="Novo Contato!">
+                <input type="text" name="_honey" style="display: none;">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+            </div>
+        </section>
+
+    <!--/-----------------------/
+        /      JAVASCRIPT       /
+        /-----------------------/-->
+        <script src="assets/js/sound.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="assets/js/carrosel.js"></script>
+
+</body>
+</html>

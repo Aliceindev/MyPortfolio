@@ -1,0 +1,815 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0C0916;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 1.5vh;
+    height: 1vh;
+
+}
+
+::-webkit-scrollbar-track {
+    background: #0C0916;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #110c21;
+}
+
+
+/*-----------------------------/
+/                              /
+/          Div/Menu            /
+/                              /
+/-----------------------------*/
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    z-index: 1000;
+}
+
+.navContainer {
+    margin-top: 2vh;
+    border-radius: 16px;
+    background-color: #110c21;
+    padding-inline: 2vw;
+}
+
+.nav {
+    width: 85vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2vw;
+    list-style: none;
+}
+
+.nav-list a.menu-link {
+    font-size: 1.1vw;
+    color: rgba(255, 255, 255, 0.50);
+    font-weight: 400;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.nav-list a.menu-link:hover {
+    color: rgba(123, 74, 226, 0.50);
+    font-weight: 700;
+}
+
+.nav-list a.menu-link.active {
+    color: rgba(123, 74, 226, 0.50) !important;
+    font-weight: 700 !important;
+}
+
+.logoImg {
+    width: 4.5vw;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid rgba(255, 255, 255, 0.50);
+    cursor: pointer;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.50);
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/*menu hamburgue*/
+@media(max-width: 750px) {
+    .hamburger {
+        display: block;
+        z-index: 1;
+    }
+
+    .nav {
+        width: 90vw;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        background-color: transparent;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .nav-list a {
+        font-size: 2.3vw !important;
+        opacity: 0;
+    }
+
+    .logoImg {
+        width: 7vw !important;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+    }
+
+    .nav-list li:nth-child(4) a {
+        transition: 0.5s 0.8s;
+    }
+
+    .nav-list li:nth-child(5) a {
+        transition: 0.5s 0.10s;
+    }
+
+    /*Estilos ativos hamburger*/
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+        background-color: #110c21;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburger {
+        position: fixed;
+        top: 26px;
+        right: 30px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+.containerMidia {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 10vw;
+    height: 100vh;
+    z-index: 10;
+}
+
+/*-----------------------------/
+/                              /
+/           Div/Home           /
+/                              /
+/-----------------------------*/
+
+.homeContainer {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.midiaLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 0.6vw;
+}
+
+.barraImg {
+    width: 1vw;
+}
+
+.midiaImg {
+    width: 2.8vw;
+    margin-top: 2vh;
+}
+
+.midiaImg:hover {
+    transition: .5s all ease-out;
+    transform: translateX(0.8vw);
+}
+
+.contTittle {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
+    /* margin-right: 10vw; */
+}
+
+.textTittle {
+    color: #FFF;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 800;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    border-right-color: transparent;
+}
+
+.textTittle span {
+    color: #7B4AE2;
+}
+
+
+.typing-animation {
+    animation: blinkCursor 500ms steps(40) normal, typing 4s steps(40) 1.8s normal both;
+}
+
+.typing-animation2 {
+    animation: blinkCursor 500ms steps(40) normal, typing 4s steps(40) 4.6s normal both;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 20em;
+    }
+}
+
+/*estado da animacao*/
+@keyframes blinkCursor {
+    from {
+        border-right-color: rgba(122, 74, 226, 0.233);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.btnLink {
+    margin-top: 4vh;
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 1vw;
+    height: 6vh;
+    width: 12vw;
+    border-radius: 16px;
+    background-color: rgba(123, 74, 226, 0.10);
+    background-size: 400%;
+    color: #7B4AE2;
+    border: none;
+    cursor: pointer;
+    transition: 0.5 all ease;
+    animation: bounce42 4.6s infinite;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+    height: inherit;
+}
+
+.button:hover {
+    color: #fff;
+    transition: all 0.6s;
+}
+
+@keyframes bounce42 {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: scale(0.90);
+    }
+
+    60% {
+        transform: scale(0.95);
+    }
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    border-radius: inherit;
+    background: #7B4AE2;
+    transition: all 0.6s;
+}
+
+.contAvatar {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* margin-right: 10vw; */
+}
+
+.avataImg {
+    width: 28vw;
+}
+
+
+/*CONFIGS ANIMATION*/
+
+.section.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+    transform: translateY(0);
+    transition: all 2s;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 2s;
+    transform: translateX(-100%);
+}
+
+.hiddenRight{
+    opacity: 0;
+    filter: blur(20px);
+    transition: all 2s;
+    transform: translateX(100%);
+}
+
+.hiddenUp {
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 1.5s;
+    transform: translateY(80%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+    transform: translateY(0);
+    transition: all 2s;
+}
+
+
+
+/*-----------------------------/
+/                              /
+/         Div/Sobre Mim        /
+/                              /
+/-----------------------------*/
+.aboutContainer :nth-child(2){
+    transition-delay: 400ms;
+}
+
+.aboutContainer {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 100vh;
+}
+
+.aboutContent2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    height: 100vh;
+}
+
+.aboutTittle {
+    color: #FFF;
+    font-size: 3.5vw;
+    font-weight: 800;
+    padding-bottom: 1vw;
+}
+
+.aboutText{
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 1.1vw;
+    font-weight: 400;
+    padding-block: 0.5vw;
+    line-height: 1.7vw; /* 156.25% */
+}
+
+.fotoImg{
+    width: 28vw;
+}
+
+
+/*-----------------------------/
+/                              /
+/         Div/Portfolio        /
+/                              /
+/-----------------------------*/
+
+.portContainer{
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.portContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85vw;
+    height: 100vh;
+}
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 60px 35px;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.card-list .card-item{
+    list-style: none;
+}
+
+.card-list .card-item .card-link{
+    user-select: none;
+    display: block;
+    background: #0c0916;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+    border-color: #2f1d56;
+}
+
+.card-list .card-item .card-link:active{
+    cursor: grabbing;
+}
+
+.card-list .card-item .card-link:hover{
+    border-color: #6143a1;
+}
+
+.card-list .card-link .card-image{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.card-list .card-link .badge{
+    color: #6e43cb;
+    background: #170f2a;
+    padding: 6px 12px;
+    font-size: 0.80rem;
+    font-weight: 600;
+    margin: 16px 0 18px;
+    width: fit-content;
+    border-radius: 10px;
+}
+/*
+.card-list .card-link .badge.java{
+    color: rgb(170, 59, 59);
+    background: #F7DFF5;
+}
+
+.card-list .card-link .badge.html{
+    color: rgb(59, 170, 81);
+    background: #F7DFF5;
+}
+
+.card-list .card-link .badge.csharp{
+    color: rgb(59, 78, 170);
+    background: #F7DFF5;
+}*/
+
+.card-list .card-link .card-title{
+    font-size: 0.90rem;
+    color: #ffffff;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.card-list .card-link .card-subtitle{
+    font-size: 0.85rem;
+    color: #5f5e66;
+    font-weight: 500;
+}
+
+.card-wrapper .swiper-pagination-bullet{
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+    background: #7B4AE2;
+}
+
+.card-wrapper .swiper-pagination-bullet-active{
+    opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button{
+    color: #7B4AE2;
+    margin-top: -35px;
+} 
+
+/*-----------------------------/
+/                              /
+/          Div/Skills          /
+/                              /
+/-----------------------------*/
+
+.skillsContainer{
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.skillsContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80vw;
+    height: 100vh;
+}
+
+.skillTittle{
+    color: #FFF;
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: 800;
+}
+
+.skillSubTittle{
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+    font-size: 1.2vw;
+    font-weight: 400;
+}
+
+.skillsImage{
+    margin: 9vh 0vh 2vh 0vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.skillsImage2{
+    margin: 5vh 0vh 0vh 0vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.skillTechs{
+    margin-top: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.imgsSkils{
+    padding-inline: 0.5vw;
+    transition: 1s all ease-in-out;
+}
+
+.img-tech{
+    width: 4vw;
+    cursor: pointer;
+}
+
+.imgsSkils:hover{
+    transform: rotateY(180deg);
+    transition: .9s all ease-in-out;
+}
+
+/*-----------------------------/
+/                              /
+/          Div/Contato         /
+/                              /
+/-----------------------------*/
+
+.cttContainer{
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.contatoContainer {
+    margin-top: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contatoContainer h2 {
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 700;
+    margin-bottom: 3vh;
+}
+
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.inputGroup {
+    margin: 1em 0 1em 0;
+    width: 35vw;
+    position: relative;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border-radius: 16px;
+    border: 1px solid rgba(123, 74, 226, 0.50);
+    background-color: transparent;
+    width: 100%;
+}
+
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    color: rgba(123, 74, 226, 0.50);
+    font-weight: 600;
+}
+
+.inputGroup input:focus~label,
+.inputGroup input:valid~label,
+.inputGroup textarea:focus~label,
+.inputGroup textarea:valid~label {
+    margin: 0em;
+    margin-left: 1.3em;
+}
+
+.inputGroup textarea:valid~label,
+.inputGroup input:valid~label {
+    display: none;
+}
+
+.inputBaseText {
+    color: #fff;
+}
+
+.divBtnBase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.btnContratar:last-child {
+    margin-left: 2vw;
+}
+
+.btnContratar:first-child {
+    margin-right: 2vw;
+}
+
+.btnContratar {
+    border-radius: 1vw;
+    width: 15vw;
+    height: 6.5vh;
+    font-size: 15px;
+    font-weight: 700;
+    color: #7B4AE2;
+    background-color: rgba(123, 74, 226, 0.10);
+    border: none;
+    cursor: pointer;
+    transition: 1s;
+    margin-bottom: 40px;
+}
+
+.btnContratar:hover {
+    background-color: rgba(89, 47, 180, 0.1);
+    border: 2px solid rgba(89, 47, 180, 0.1);
+    transition: 0.9s all ease-out;
+}
