@@ -388,9 +388,14 @@ a {
 
 
 /*CONFIGS ANIMATION*/
-
+.section {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
 .section.show {
     opacity: 1;
+    visibility: visible;
     filter: blur(0px);
     transform: translateX(0);
     transform: translateY(0);
@@ -425,7 +430,6 @@ a {
     transform: translateY(0);
     transition: all 2s;
 }
-
 
 
 /*-----------------------------/
